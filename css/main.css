@@ -1,0 +1,113 @@
+ul, ol {margin: 0 !important;}
+.logo {
+    padding: 10px 0;
+}
+.big-button, .home-banner-form-btn {
+    border-radius: 2px !important;
+    border: 1px solid #d8d9da !important;
+    border-bottom-width: 3px !important;
+    color: #fff!important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    height: 40px !important;
+    letter-spacing: normal !important;
+    line-height: 40px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    width: auto;
+}
+.big-button:hover {
+    background-color: #b80007;
+}
+.red {
+    background-color: #ca0008 !important;
+    border-color: #8f0006 !important;
+}
+.home-banner-form-btn {
+    padding: 0 50px !important;
+	border-color: none !important;
+	box-shadow: none !important;
+}
+.black {
+    background-color: #383838 !important;
+}
+.top-social-icons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.top-social-icons ul li {
+    float: left;
+    padding: 10px;
+}
+/* Boostrap3 Nav Style */
+.navbar-inverse { background-color: #2D6A70}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #124A4F}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #124A4F}
+.dropdown-menu { background-color: #124A4F}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #124A4F}
+.navbar-inverse { background-image: none; border: 0;}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #2D6A70}
+.navbar-inverse .navbar-brand { color: #FFFFFF}
+.navbar-inverse .navbar-brand:hover { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #DEDEDE}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #FFFFFF; background-color: #124A4F}
+.dropdown-menu>li>a { color: #FFFFFF;}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #DEDEDE}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+.navbar-nav > li > a {padding-top:7px !important; padding-bottom:6px !important;}
+.navbar {min-height:33px !important; margin-bottom: 10px;}
+.navbar-nav>li>.dropdown-menu {border: 0;}
+
+.nav { margin-bottom: 0; }
+.nav > li.dropdown.open { position: static; }
+.nav > li.dropdown.open .dropdown-menu { width: 100%; left:0; right:0; }
+
+.home-banner-form { background: url('../images/property-house-banner.jpg'); height: 270px; width: 100%; margin-top: 10px;}
+.banner-from { padding: 50px 10px; margin-left: 30px;}
+.banner-from select { padding: 0;height: 22px;margin-bottom: 10px;border-radius: 2px; border: 1px solid #707070;}
+.banner-from input[type="text"] {height: 26px !important; border: 1px solid #707070;}
+.banner-from label {font-weight: normal; margin-left: 16px; font-size: 0.875em; margin-bottom: 0;}
+.banner-from .inner-gray-box [class*="col-md"]{ padding-right: 5px; padding-left: 5px;}
+.inner-gray-box {min-height: 100px; background: #e4e4e4;}
+.main-heading {font-size: 25px;}
+.main-content h2 {font-size: 19px; margin-bottom: 20px; color: #2d6a70; border-bottom: 1px solid #2d6a70; padding-bottom: 10px;}
+.main-content h2 a {color: #2d6a70;}
+.main-content h2 a:hover {color: #124A4F; text-decoration: none;}
+.property-type-list {list-style: none; margin: 0; padding: 0;}
+.property-type-list li {list-style: none;  margin-bottom: 12px;}
+.property-type-list li a {color: #004276;}
+h2.property-feature {border: none !important; margin-top: 30px; margin-bottom: 5px;}
+.property-feature-cont {border: 1px solid #ccc; padding: 7px;}
+.property-feature-cont img {width: 100%;}
+.property-feature-details h3 {font-size: 14px; margin-top: 5px;}
+.property-feature-details h3 a {text-decoration: none; color: #444; font-weight: bold;}
+/* Owl Carousel Navigation Style */
+.owl-theme .owl-controls .owl-buttons div { position: absolute; background: transparent !important; color: #124A4F !important;}
+.owl-theme .owl-controls .owl-buttons .owl-prev{ left: -15px; top: 100px; }
+.owl-theme .owl-controls .owl-buttons .owl-next{ right: -15px; top: 100px; }
+
+.client-resources {padding: 20px; background: #e4e4e4; margin-top: 50px !important;}
+.client-resources ul { list-style: none !important; }
+.client-resources li:before { font-family: 'FontAwesome'; content: '\f0da'; margin:0 5px 0 -20px;}
+.find-new-home {position: relative; margin-top: 50px;}
+/*.find-new-home img {width: 100%;}*/
+.find-new-home div {position: absolute; bottom: 0; width: 100%; background: #000; height: 20%; opacity: 0.6;}
+.find-new-home h4 {position: absolute; bottom: 0; text-align: center; width: 100%;}
+.find-new-home a h4{text-decoration: none; color: #fff;}
+.real-estate-footer-heading {padding: 20px; background: #e4e4e4; margin-bottom: 20px; margin-top: 20px;}
+.real-estate-footer-heading h2 {border: none; padding-bottom: 0; margin: 0;}
+.footer-info { padding: 20px; border-top: 1px solid #ccc; margin-top: 20px;}
