@@ -185,3 +185,79 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+// Register Custom Post Type 'Property'
+function ks_set_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Properties', 'Post Type General Name', 'property-house' ),
+		'singular_name'         => _x( 'Property', 'Post Type Singular Name', 'property-house' ),
+		'menu_name'             => __( 'Sale Property', 'property-house' ),
+		'name_admin_bar'        => __( 'Property', 'property-house' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'property-house' ),
+		'all_items'             => __( 'All Properties', 'property-house' ),
+		'add_new_item'          => __( 'Add New Property', 'property-house' ),
+		'add_new'               => __( 'Add New', 'property-house' ),
+		'new_item'              => __( 'New Property', 'property-house' ),
+		'edit_item'             => __( 'Edit Property', 'property-house' ),
+		'update_item'           => __( 'Update Property', 'property-house' ),
+		'view_item'             => __( 'View Property', 'property-house' ),
+		'search_items'          => __( 'Search Property', 'property-house' ),
+		'not_found'             => __( 'Not found', 'property-house' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'property-house' ),
+		'items_list'            => __( ' Property list', 'property-house' ),
+		'items_list_navigation' => __( 'Properties list navigation', 'property-house' ),
+		'filter_items_list'     => __( 'Filter Properties list', 'property-house' ),
+	);
+	$args = array(
+		'label'                 => __( 'Property', 'property-house' ),
+		'description'           => __( 'This Post Type create a listing.', 'property-house' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'public'                => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-admin-home',
+		'rewrite' => array( 'slug' => '/dubai/property-for-sale' ),
+	);
+	register_post_type( 'property', $args );
+	
+		// Property > Features
+		register_taxonomy( 'property_amenities', array( 'property' ), array(
+			'label' => __( 'Amenities', "property-house" ),
+			'hierarchical' => true,
+			'rewrite' => array( 'slug' => 'property_amenities' )
+		));
+		
+		// Property > Type
+		register_taxonomy('property_type', 'property', Array(
+			'label' => __( 'Type', "property-house" ),
+			'rewrite' => array( 'slug' => 'property_type' ),
+			'hierarchical' => true,
+		));
+		// Property > City
+		register_taxonomy('property_city', 'property', Array(
+			'label' => __( 'City', "property-house" ),
+			'rewrite' => array( 'slug' => 'property_city' ),
+			'hierarchical' => true,
+		));
+		// Property > Rent
+		register_taxonomy('for_rent', 'property', Array(
+			'label' => __( 'Rent', "property-house" ),
+			'rewrite' => array( 'slug' => 'for-rent' ),
+			'hierarchical' => true,
+		));
+		// Property > Rent
+		register_taxonomy('for_sale', 'property', Array(
+			'label' => __( 'Sale', "property-house" ),
+			'rewrite' => array( 'slug' => 'for_sale' ),
+			'hierarchical' => true,
+		));
+
+}
+add_action( 'init', 'ks_set_post_type', 0 );
+
+
+
+
+
+
