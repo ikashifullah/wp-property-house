@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+//global $javo_theme_option;
+global $javo_tso;
+//$javo_theme_option = @unserialize(get_option("javo_themes_settings"));
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -7,7 +11,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <meta name="description" content="">
     <meta name="author" content="Kashif Ullah; kashifullahwebdeveloper@gmail.com">
-    <link rel="icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $javo_tso->get('favicon_url', '');?>" />
 
     <title><?php wp_title(); ?></title>
 
@@ -17,6 +21,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<?php
+// Custom CSS AREA
+if($javo_tso->get('custom_css', '') != ''){
+	printf('<style type="text/css">%s</style>', stripslashes( $javo_tso->get('custom_css', '') ) );
+};
+if($javo_tso->get('h1_normal_size', '')) {
+	printf('<style type="text/css">h1 { font-size: %spx !important;}</style>', stripslashes( $javo_tso->get('h1_normal_size', '') ) );
+}
+?>
+	
 	<?php wp_head(); ?>
 </head>
 
@@ -27,7 +41,9 @@
         <header>
         <div class="col-md-12">
             <div class="logo pull-left">
-                <a href="#" alt=""><img src="<?php echo get_template_directory_uri(); ?>/images/property_house_logo.png" width="200" /> </a>
+                <a href="<?php home_url();?>" alt="">
+					<img src="<?php echo $javo_tso->get('logo_url', get_template_directory_uri().'/images/property_house_logo.png'); ?>" width="200" />
+				</a>
             </div>
             <div class="pull-right">
                 <div class="top-social-icons">

@@ -15,6 +15,10 @@ function prop_get_style( $fn = NULL, $name = 'kstheme', $ver = '0.0.1', $media =
 }
 
 
+function javo_str($content, $return_value=NULL){
+	return !empty($content) ? $content : $return_value;
+};
+
 /***
 * Generate a thumbnail on the fly
 *

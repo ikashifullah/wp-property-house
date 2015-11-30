@@ -192,7 +192,7 @@ function ks_set_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Properties', 'Post Type General Name', 'property-house' ),
 		'singular_name'         => _x( 'Property', 'Post Type Singular Name', 'property-house' ),
-		'menu_name'             => __( 'Property', 'property-house' ),
+		'menu_name'             => __( 'Sale Property', 'property-house' ),
 		'name_admin_bar'        => __( 'Property', 'property-house' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'property-house' ),
 		'all_items'             => __( 'All Properties', 'property-house' ),
@@ -214,11 +214,11 @@ function ks_set_post_type() {
 		'description'           => __( 'This Post Type create a listing.', 'property-house' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', ),
-		//'taxonomies' 			=> array('category'),
+		'taxonomies' 			=> array('category'),
 		'public'                => true,
 		'menu_position'         => 5,
 		'menu_icon'             => 'dashicons-admin-home',
-		'rewrite' => array( 'slug' => 'property' ),
+		'rewrite' => array( 'slug' => '/dubai/property-for-sale' ),
 	);
 	register_post_type( 'property', $args );
 	
@@ -241,18 +241,24 @@ function ks_set_post_type() {
 			'rewrite' => array( 'slug' => 'property_city' ),
 			'hierarchical' => true,
 		));
-		// Property > Status
-		register_taxonomy('property_status', 'property', Array(
-			'label' => __( 'Status', "property-house" ),
-			'rewrite' => array( 'slug' => 'property_status' ),
+		// Property > Rent
+		register_taxonomy('for_rent', 'property', Array(
+			'label' => __( 'Rent', "property-house" ),
+			'rewrite' => array( 'slug' => 'for-rent' ),
 			'hierarchical' => true,
 		));
-		
-		register_taxonomy('locations', 'property', Array(
-			'label' => __( 'Locations', "property-house" ),
-			'rewrite' => array( 'slug' => 'locations' ),
+		// Property > Rent
+		register_taxonomy('for_sale', 'property', Array(
+			'label' => __( 'Sale', "property-house" ),
+			'rewrite' => array( 'slug' => 'for_sale' ),
 			'hierarchical' => true,
 		));
 
 }
 add_action( 'init', 'ks_set_post_type', 0 );
+
+
+
+
+
+

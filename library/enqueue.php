@@ -3,6 +3,7 @@
 add_action('wp_enqueue_scripts', 'prop_load_scripts');
 function prop_load_scripts() {
 
+	global $javo_theme_option;
 	// load all scripts
 	prop_get_script('bootstrap.min.js', 'bootstrap', '3.3.5'); 
 	prop_get_script('jquery-1.11.3.min.js', 'jquery', '1.11.3'); 
@@ -14,6 +15,17 @@ function prop_load_scripts() {
 	prop_get_style("main.css", "main-styles");
 	prop_get_style("owl.carousel.css", "owl-styles");
 	prop_get_style("owl.theme.css", "owl-theme");
+	
+	
+	$protocol = is_ssl() ? 'https' : 'http';
+
+	$javo_load_fonts = Array("basic_font", "h1_font", "h2_font", "h3_font", "h4_font", "h5_font", "h6_font");
+
+	foreach($javo_load_fonts as $index=>$font)
+
+		if($javo_theme_option[$font] != "")
+
+			wp_enqueue_style( 'javo-opensans', "$protocol://fonts.googleapis.com/css?family=$javo_theme_option[$font]");
 	
 }
 
