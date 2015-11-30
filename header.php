@@ -48,10 +48,10 @@ if($javo_tso->get('h1_normal_size', '')) {
             <div class="pull-right">
                 <div class="top-social-icons">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube fa-lg"></i></a></li>
+                        <li><a href="<?php echo $javo_tso->get('facebook', '#'); ?>" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                        <li><a href="<?php echo $javo_tso->get('google', '#'); ?>" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+                        <li><a href="<?php echo $javo_tso->get('twitter', '#'); ?>" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                        <li><a href="<?php echo $javo_tso->get('youtube', '#'); ?>" target="_blank"><i class="fa fa-youtube fa-lg"></i></a></li>
                     </ul>
                 </div>
                 <a href="#" class="btn red big-button">Place your Property</a>

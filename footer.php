@@ -8,10 +8,11 @@
  *
  * @package Property_House
  */
-
+global $javo_theme_option, $javo_tso;
+ 
 ?>
 <div class="row col-md-12">
-	<p class="footer-info">Copyright &copy 2015 Propertyhouse. All Rights Reserved.</p>
+	<p class="footer-info"><?php echo $javo_tso->get('copyright', 'Copyright &copy; 2015 Propertyhouse. All Rights Reserved.'); ?></p>
 </div>
 </div> <!-- Container ending -->
 
