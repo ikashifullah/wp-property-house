@@ -23,5 +23,3 @@ require_once get_template_directory().'/library/enqueue.php';
 require_once get_template_directory().'/library/wp_init.php';
 
 require_once get_template_directory()."/library/admin/theme-settings.php";   // theme options
-require_once get_template_directory()."/library/classes/javo_array.php";   // Array
-require_once get_template_directory()."/library/classes/javo-get-option.php";   

@@ -13,68 +13,131 @@
  */
  
 
-$query = new WP_Query( array('post_type' => 'property'));
- 
- echo '<pre>';
-print_r($query);
-
-exit;
- 
- 
-
-$taxonomies = get_object_taxonomies( array( 'post_type' => 'property' ) );
-$lists = array();
-$i = 0;
-foreach($taxonomies as $key => $taxonomy) {
-
-	$lists[] = get_categories('taxonomy='.$taxonomy.'&type=property'); 
-	
-	echo '<pre>';
-	print_r($lists[0]);
-	exit;	
-	
-}
-
-echo '<pre>';
-print_r($res);
-exit;
- 
- 
-$terms = get_terms('property_status');
-
-$posts = array();
-foreach ( $terms as $term ) {
-	if($term->slug == 'sale')
-		$posts[$term->name] = get_posts(array( 'posts_per_page' => -1, 'post_type' => 'property', 'tax_name' => $term->name ));
-}
-
-
-
-echo '<pre>';
-print_r($posts);
-exit;
-
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="main-content">
+	
+	<h1 class="main-heading">5 Apartments found for Sale</h1>
+	
+	<div class="col-md-8 col-sm-12">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<div class="row">
+			
+			<div class="col-md-6 col-sm-6">
+                    
+					
+					
+			</div>
+			
+						
+			
+		</div>
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+			
+			<h2 class="property-feature">Featured Properties for Rent</h2>
+			
+			<div class="owl-carousel"  id="property-feature-rent-id">				
+				
+				<div class="col-md-12">
+				
+					<div class="property-feature-cont">
+					
+						<div class="property-img">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+							
+						</div>
+						
+						<div class="property-feature-details">
+						
+							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col-md-12">
+				
+					<div class="property-feature-cont">
+					
+						<div class="property-img">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+							
+						</div>
+						
+						<div class="property-feature-details">
+						
+							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col-md-12">
+				
+					<div class="property-feature-cont">
+					
+						<div class="property-img">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+							
+						</div>
+						
+						<div class="property-feature-details">
+						
+							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="col-md-12">
+				
+					<div class="property-feature-cont">
+					
+						<div class="property-img">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+							
+						</div>
+						
+						<div class="property-feature-details">
+						
+							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+        </div>
+		
+	</div>
+	
+	<?php get_sidebar('frontpage'); ?>		
+	
+	<div class="clearfix"></div>
+	
+	<div class="row col-md-12">
+	
+		<div  class="real-estate-footer-heading">
+		
+			<h2>Real Estate Links</h2>
+			
+		</div>
+		
+	</div>
+	
+</div>	
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-
-			<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
