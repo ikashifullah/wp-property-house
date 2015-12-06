@@ -23,14 +23,29 @@ get_header(); ?>
 
 		<div class="row">
 			
-			<div class="col-md-6 col-sm-6">
+			<div class="col-md-9 col-sm-6">
                     
-					
+				<div class="listing-title"><a href="#">1 Br Apartment for sale</a></div>
+				
+				<div class="listing-images" style="float: left;">
+					<a href="#"><img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg" /></a>
+				</div>
+				
+				<div class="listing-features">
+					<ul>
+						<li>Bedrooms : 3</li>
+						<li>Bathrooms: 4</li>
+						<li>size : 1432 SqFt</li>
+					</ul>
+				</div>	
 					
 			</div>
 			
-						
-			
+			<div class="col-md-3 col-sm-6">
+                    
+				<div class="listing-price">AED 175,000 /yr</div>	
+					
+			</div>
 		</div>
 
 			
