@@ -19,127 +19,187 @@ get_header(); ?>
 	
 	<h1 class="main-heading">5 Apartments found for Sale</h1>
 	
-	<div class="col-md-8 col-sm-12">
+		<div class="col-md-8 col-sm-12">
 
-		<div class="row">
-			
-			<div class="col-md-9 col-sm-6">
-                    
-				<div class="listing-title"><a href="#">1 Br Apartment for sale</a></div>
+			<div class="single-listing">
+		
+				<div class="row">		
 				
-				<div class="listing-images" style="float: left;">
-					<a href="#"><img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg" /></a>
-				</div>
-				
-				<div class="listing-features">
-					<ul>
-						<li>Bedrooms : 3</li>
-						<li>Bathrooms: 4</li>
-						<li>size : 1432 SqFt</li>
-					</ul>
-				</div>	
-					
-			</div>
-			
-			<div class="col-md-3 col-sm-6">
-                    
-				<div class="listing-price">AED 175,000 /yr</div>	
-					
-			</div>
-		</div>
+					<div class="col-md-9 col-sm-6">
+							
+						<h3 class="listing-title"><a href="#">23 Marina Tower, Dubai Marina, Dubai</a></h3>
+						
+						<div class="listing-images" style="float: left;">
+							<a href="#">
+								<div style="background-image: url('http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg');"></div>
+								<!--<img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg" />-->
+							</a>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>Bedrooms : <b>3</b></li>
+								<li>Bathrooms: <b>4</b></li>
+							</ul>
+						</div>
+						<div class="listing-features">
+							<ul>
+								<li>size : <b>2313 SqFt</b></li>
+							</ul>
+						</div>
 
-			
-			<h2 class="property-feature">Featured Properties for Rent</h2>
-			
-			<div class="owl-carousel"  id="property-feature-rent-id">				
-				
-				<div class="col-md-12">
-				
-					<div class="property-feature-cont">
-					
-						<div class="property-img">
+						<div class="clearfix"></div>
 						
-							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+						<div class="listing-location"><i class="fa fa-map-marker fa-lg"></i> Located : UAE ‪>‪ Dubai ‪>‪ The Palm Jumeirah</div>	
 							
-						</div>
-						
-						<div class="property-feature-details">
-						
-							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
-							
-						</div>
-						
 					</div>
 					
-				</div>
-				
-				<div class="col-md-12">
-				
-					<div class="property-feature-cont">
-					
-						<div class="property-img">
-						
-							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
+					<div class="col-md-3 col-sm-6">
 							
-						</div>
-						
-						<div class="property-feature-details">
-						
-							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
+						<div class="listing-price">AED 175,000 /yr</div>	
 							
-						</div>
-						
 					</div>
-					
-				</div>
 				
-				<div class="col-md-12">
-				
-					<div class="property-feature-cont">
-					
-						<div class="property-img">
-						
-							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
-							
-						</div>
-						
-						<div class="property-feature-details">
-						
-							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="col-md-12">
-				
-					<div class="property-feature-cont">
-					
-						<div class="property-img">
-						
-							<img src="<?php echo get_template_directory_uri(); ?>/images/feature.jpg" />
-							
-						</div>
-						
-						<div class="property-feature-details">
-						
-							<h3><a href="#">Blandit pellentesque ridiculus luctus cras vitae, diam risus molestie morbi dui. Ut vestibulum at</a></h3>
-							
-						</div>
-						
-					</div>
-					
 				</div>
 				
 			</div>
 			
-        </div>
+			<div class="single-listing">
+			
+				<div class="row">	
+				
+					<div class="col-md-9 col-sm-6">
+							
+						<div class="listing-title"><a href="#">1 Br Apartment for sale, Sport City, Dubai</a></div>
+						
+						<div class="listing-images" style="float: left;">
+							<a href="#">
+								<div style="background-image: url('http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail1.jpeg');"></div>
+								<!--<img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail1.jpeg" />-->
+							</a>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>Bedrooms : <b>3</b></li>
+								<li>Bathrooms: <b>4</b></li>
+							</ul>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>size : <b>2313 SqFt</b></li>
+							</ul>
+						</div>
+
+						<div class="clearfix"></div>
+						
+						<div class="listing-location"><i class="fa fa-map-marker fa-lg"></i> Located : UAE ‪>‪ Dubai ‪>‪ The Palm Jumeirah</div>	
+							
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+							
+						<div class="listing-price">AED 175,000 /mo</div>	
+							
+					</div>
+				
+				</div>
+				
+			</div>
+			
+			<div class="single-listing">
+		
+				<div class="row">		
+				
+					<div class="col-md-9 col-sm-6">
+							
+						<h3 class="listing-title"><a href="#">23 Marina Tower, Dubai Marina, Dubai</a></h3>
+						
+						<div class="listing-images" style="float: left;">
+							<a href="#">
+								<div style="background-image: url('http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg');"></div>
+								<!--<img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail.jpeg" />-->
+							</a>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>Bedrooms : <b>3</b></li>
+								<li>Bathrooms: <b>4</b></li>
+							</ul>
+						</div>
+						<div class="listing-features">
+							<ul>
+								<li>size : <b>2313 SqFt</b></li>
+							</ul>
+						</div>
+
+						<div class="clearfix"></div>
+						
+						<div class="listing-location"><i class="fa fa-map-marker fa-lg"></i> Located : UAE ‪>‪ Dubai ‪>‪ The Palm Jumeirah</div>	
+							
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+							
+						<div class="listing-price">AED 175,000 /yr</div>	
+							
+					</div>
+				
+				</div>
+				
+			</div>
+			
+			<div class="single-listing">
+			
+				<div class="row">	
+				
+					<div class="col-md-9 col-sm-6">
+							
+						<div class="listing-title"><a href="#">1 Br Apartment for sale, Sport City, Dubai</a></div>
+						
+						<div class="listing-images" style="float: left;">
+							<a href="#">
+								<div style="background-image: url('http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail1.jpeg');"></div>
+								<!--<img src="http://localhost:8080/wptesting/wp-content/themes/property-house/images/thumbnail1.jpeg" />-->
+							</a>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>Bedrooms : <b>3</b></li>
+								<li>Bathrooms: <b>4</b></li>
+							</ul>
+						</div>
+						
+						<div class="listing-features">
+							<ul>
+								<li>size : <b>2313 SqFt</b></li>
+							</ul>
+						</div>
+
+						<div class="clearfix"></div>
+						
+						<div class="listing-location"><i class="fa fa-map-marker fa-lg"></i> Located : UAE ‪>‪ Dubai ‪>‪ The Palm Jumeirah</div>	
+							
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+							
+						<div class="listing-price">AED 175,000 /mo</div>	
+							
+					</div>
+				
+				</div>
+				
+			</div>
+		
+		</div>	
+		
+		<?php get_sidebar('frontpage'); ?>					
 		
 	</div>
-	
-	<?php get_sidebar('frontpage'); ?>		
 	
 	<div class="clearfix"></div>
 	
