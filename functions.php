@@ -27,7 +27,7 @@ require_once get_template_directory()."/library/admin/theme-settings.php";   // 
 
 function buildSelect($tax){	
 	$terms = get_terms($tax);
-	$x = '<select name="'. $tax .'">';
+	$x = '<select name="'. $tax .'" class="form-control input-sm">';
 	$x .= '<option value="">Select '. ucfirst($tax) .'</option>';
 	foreach ($terms as $term) {
 	   $x .= '<option value="' . $term->slug . '">' . $term->name . '</option>';	

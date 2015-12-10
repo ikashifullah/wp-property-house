@@ -65,71 +65,94 @@ if($javo_tso->get('h1_normal_size', '')) {
 	</nav><!-- #site-navigation -->
 	<div class="clearfix"></div>
 	<div class="home-banner-form">
-                <form class="banner-from">
+                <form class="banner-from" method="get" action="<?php bloginfo('url');?>/listing-search-results/">
                     <div class="row">
                         <div class="col-md-2 col-sm-4 col-xs-7">
-                                <select class="form-control input-sm">
-                                    <option value="">All cities</option>
-                                    <option value="">One</option>
-                                </select>
-                                <select class="form-control input-sm">
-                                    <option value="">Property for sale</option>
-                                    <option value="">One</option>
-                                </select>
-                                <select class="form-control input-sm">
-                                    <option value="">Property for rent</option>
-                                    <option value="">One</option>
-                                </select>
-                                <select class="form-control input-sm">
-                                    <option value="">Property by Location</option>
-                                    <option value="">One</option>
-                                </select>
+								<?php echo buildSelect('property_city'); ?>
+                                
+								<?php echo buildSelect('property_status'); ?>
+								
+								<?php echo buildSelect('locations'); ?>
+								
+								<?php echo buildSelect('property_type'); ?>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-7">
                             <div class="inner-gray-box">
-                                <label for="exampleInputEmail1">Price(AED)</label>
+                                <label for="exampleInputEmail1">Bathroom(Min/Max)</label>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6">
-                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="Price From">
+                                        <select class="form-control input-sm" name="min_bathroom">
+											<option value="">Any</option>
+                                            <option value="-1" selected>Studio</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12+</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <input type="text" class="form-control input-sm" id="exampleInputEmail1" placeholder="Price To">
+                                        <select class="form-control input-sm" name="max_bathroom">
+											<option value="">Any</option>
+                                            <option value="-1">Studio</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12" selected>12+</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <label for="exampleInputEmail1">Bedroom(Min/Max)</label>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control input-sm">
-                                            <option value="">Studio</option>
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                            <option value="">6</option>
-                                            <option value="">7</option>
-                                            <option value="">8</option>
-                                            <option value="">9</option>
-                                            <option value="">10</option>
-                                            <option value="">11</option>
-                                            <option value="">12+</option>
+                                        <select class="form-control input-sm" name="min_bedroom">
+											<option value="">Any</option>
+                                            <option value="-1" selected>Studio</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12+</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <select class="form-control input-sm">
-                                            <option value="">Studio</option>
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                            <option value="">6</option>
-                                            <option value="">7</option>
-                                            <option value="">8</option>
-                                            <option value="">9</option>
-                                            <option value="">10</option>
-                                            <option value="">11</option>
-                                            <option value="">12+</option>
+                                        <select class="form-control input-sm" name="max_bedroom">
+											<option value="">Any</option>
+                                            <option value="-1">Studio</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12" selected>12+</option>
                                         </select>
                                     </div>
                                 </div>
