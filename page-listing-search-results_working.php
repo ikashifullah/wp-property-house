@@ -1,91 +1,57 @@
-<?php
+<?php if (!session_id()) session_start();
+
 /**
- * Template Name: Searched Result
+ * Template Name: Custom Search Results
  */
 
 get_header();
 
-$status = $_GET['status'];
-$city = $_GET['city'];
-$type = $_GET['type'];
 
-
-$args = array(
-		
-			'post_type' => 'property',
-			
-			'post_status' => 'publish',
-			
-			'posts_per_page' => 6,
-			
-			'order' => 'DESC',
-			
-			'orderby' => 'date',
-			
-			'tax_query' => array()
-		
-		);
-		
-$status = $type = $city = '';	
-	
-if(isset($status) && !empty($status)){
-		
-		$args['tax_query'][] = array(
-		
-			'taxonomy' => 'property_status',
-			
-			'field' => 'slug',
-			
-			//'terms' => $status
-			'terms' => 'rent'
-		
-		);
-		
+$list = array();
+$item = array();  
+if($_GET){
+	foreach($_GET as $key => $value){
+		if($value != ''){
+			$item['taxonomy'] = htmlspecialchars($key);
+			$item['terms'] = htmlspecialchars($value);
+			$item['field'] = 'slug';
+			$list[] = $item;
+		}		
 	}
-/*
-if(isset($type) && !empty($type)){
-		
-		$args['tax_query'][] = array(
-		
-			'taxonomy' => 'property_type',
-			
-			'field' => 'slug',
-			
-			'terms' => $type
-		
-		);
-	}
-	
-	if(isset($city) && !empty($city)){
+	$_SESSION['realty-search'] = !empty($list) ? $list : array();
+}
 
-		$args['tax_query'][] = Array(
+$search = !empty($_SESSION['realty-search']) ? $_SESSION['realty-search'] : array();
+$cleanArray = array_merge(array('relation' => 'AND'), $search);
+//$cleanArray = array_merge(array('relation' => 'AND'), $list);
 
-			'taxonomy'=>'property_city',
+$args['post_type'] = 'property';
 
-			'field'=>'slug',
+$args['showposts'] = 1;
 
-			'terms'=>$city
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-		);
+$args['paged'] = $paged;
 
-	}
-*/
-	$ks_this_posts = new WP_Query($args);				
-		
+$args['tax_query'] = $cleanArray;
+
+$the_query = new WP_Query( $args );
+
 ?>
+
 <div class="main-content">
 	
-	<h1 class="main-heading">?? Apartments found for Sale</h1>
+	<h1 class="main-heading"><?php echo ($the_query->found_posts > 0) ? $the_query->found_posts. ' Apartments found for Sale' : 'No Apartments found for Sale'; ?></h1>
 	
 		<div class="col-md-8 col-sm-12">
 		
 			<?php
 				
-			if( $ks_this_posts -> have_posts() ) {
+			if( $the_query -> have_posts() ) {
 				
-				while( $ks_this_posts -> have_posts() ) {
+				while( $the_query -> have_posts() ) {
 					
-					$ks_this_posts -> the_post();
+					$the_query -> the_post();
 					
 					$ks_property_str = new get_char( get_post( get_the_ID() ) );
 					
@@ -139,8 +105,16 @@ if(isset($type) && !empty($type)){
 				}
 						
 			}
+			
+			wp_reset_postdata();
 				
 		?>
+		
+			<div class="row page-navigation">
+		
+				<?php wp_pagenavi( array( 'query' => $the_query) ); ?>
+				
+			</div>
 					
 		</div>	
 		

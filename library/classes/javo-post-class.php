@@ -74,4 +74,5 @@ class get_char {
 		
 	}
 	
+	
 }

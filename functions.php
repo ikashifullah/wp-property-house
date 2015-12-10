@@ -23,3 +23,15 @@ require_once get_template_directory().'/library/enqueue.php';
 require_once get_template_directory().'/library/wp_init.php';
 
 require_once get_template_directory()."/library/admin/theme-settings.php";   // theme options
+
+
+function buildSelect($tax){	
+	$terms = get_terms($tax);
+	$x = '<select name="'. $tax .'">';
+	$x .= '<option value="">Select '. ucfirst($tax) .'</option>';
+	foreach ($terms as $term) {
+	   $x .= '<option value="' . $term->slug . '">' . $term->name . '</option>';	
+	}
+	$x .= '</select>';
+	return $x;
+}
