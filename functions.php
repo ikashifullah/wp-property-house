@@ -35,3 +35,12 @@ function buildSelect($tax){
 	$x .= '</select>';
 	return $x;
 }
+
+// Pagination doesn't work without this in 'Location Taxonomy Template' i.e. taxonomy-property_city
+add_filter( 'option_posts_per_page', 'tdd_tax_filter_posts_per_page' );
+
+function tdd_tax_filter_posts_per_page( $value ) {
+
+	return (is_tax('property_city')) ? 1 : $value;
+
+}

@@ -38,6 +38,44 @@ class javo_post_meta_box{
 				<th><?php _e('Bathrooms', 'property-house');?></th>
 				<td><?php echo $this->javo_pt_add("bathrooms", $post->ID);?></td>
 			</tr>
+			<tr>
+				<th><?php _e('Parking', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("parking", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Plot Size', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("plot_size", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Living Rooms', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("living_rooms", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Kitchens', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("kitchens", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Rooms', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("rooms", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Sale Price', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("sale_price", $post->ID);?>
+				(Please type numbers only without any dots or commas.)
+				</td>
+			</tr>
+			<tr>
+				<th><?php _e('Price Prefix', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("price_postfix", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Area', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("area", $post->ID);?></td>
+			</tr>
+			<tr>
+				<th><?php _e('Area Suffix', 'property-house');?></th>
+				<td><?php echo $this->javo_pt_add("area_postfix", $post->ID);?></td>
+			</tr>
 		</table>
 	<?php	
 	}
@@ -61,6 +99,7 @@ class javo_post_meta_box{
 						update_post_meta($post_id, 'property_id', $javo_pt_query->get('property_id'));
 						update_post_meta($post_id, 'bedrooms', $javo_pt_query->get('bedrooms'));
 						update_post_meta($post_id, 'bathrooms', $javo_pt_query->get('bathrooms'));
+						update_post_meta($post_id, 'parking', $javo_pt_query->get('parking'));
 					
 				}			
 			break; 
