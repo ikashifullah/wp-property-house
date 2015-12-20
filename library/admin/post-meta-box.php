@@ -67,7 +67,9 @@ class javo_post_meta_box{
 			</tr>
 			<tr>
 				<th><?php _e('Price Prefix', 'property-house');?></th>
-				<td><?php echo $this->javo_pt_add("price_postfix", $post->ID);?></td>
+				<td><?php echo $this->javo_pt_add("price_postfix", $post->ID);?>
+				(e.g. AED)
+				</td>
 			</tr>
 			<tr>
 				<th><?php _e('Area', 'property-house');?></th>
@@ -75,7 +77,9 @@ class javo_post_meta_box{
 			</tr>
 			<tr>
 				<th><?php _e('Area Suffix', 'property-house');?></th>
-				<td><?php echo $this->javo_pt_add("area_postfix", $post->ID);?></td>
+				<td><?php echo $this->javo_pt_add("area_postfix", $post->ID);?>
+				(e.g. Sq Ft)
+				</td>
 			</tr>
 			<tr>
 				<th><?php _e('Location Position', 'property-house');?></th>
