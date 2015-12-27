@@ -11,27 +11,45 @@ get_header(); ?>
 
 <div class="main-content">
 		
+	<div class="col-md-8 col-sm-12">
+	
+		<div class="row">
+		
 		<?php while ( have_posts() ) : the_post(); ?>
 		
 		<?php the_title( '<h1 class="main-heading">', '</h1>' ); ?>
 		
-		<?php 
+			<div class="col-md-8 col-sm-12">
+		
+			<?php 
 		
 			$detail_images = @unserialize(get_post_meta($post->ID, "detail_images", true)); 
 			
 			if(!empty($detail_images)): ?>
 			
 				<div class="single-image-slider">
-					
+									
 					<?php 
-						foreach($detail_images as $index => $image) {
+						$i = 1;
+						$total_images = count($detail_images);
+												
+						foreach( $detail_images  as $index => $image) {
 							
 							$img_src = wp_get_attachment_image_src($image, 'full');
-							if($img_src !="")
-								printf("<li><img src='%s'></li>",$img_src[0]);
+							if($img_src !="") {
+								$display = '';
+								if($i > 1) {
+										$display = "style='display: none;'";
+								}
+									printf("<a href='%s' ".$display."><img src='%s'></a>", $img_src[0], $img_src[0]);
+								
+							}
+							
+							$i++;	
 						}
+						
 					?>
-					
+					<div class="single-total-images"><?php echo $total_images; ?> Photos - Click to enlarge</div>
 				</div>			
 				
 			<?php endif; ?>
@@ -45,9 +63,33 @@ get_header(); ?>
 				endif;
 			?>
 
+		
+			</div>
+			
 		<?php endwhile; // End of the loop. ?>
+		
+			<div class="col-md-4 col-sm-12">
+				Similar Properties
+			</div>
+			
+		</div> <!-- .row -->
+		
+	</div>	<!-- .col-md-8 .col-sm-12 -->
+	
+	<?php get_sidebar('frontpage'); ?>		
+	
+	<div class="clearfix"></div>
+	
+	<div class="row col-md-12">
+	
+		<div  class="real-estate-footer-heading">
+		
+			<h2>Real Estate Links</h2>
+			
+		</div>
+		
+	</div>
 
 </div><!-- .main-content -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

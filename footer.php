@@ -41,6 +41,16 @@ global $javo_theme_option, $javo_tso;
 				  ],
 				pagination : false  
 			});
+						
+			jQuery('.single-image-slider').magnificPopup({
+			  delegate: 'a', // child items selector, by clicking on it popup will open
+			  type: 'image',
+			   gallery: {
+				  enabled: true
+				},
+			  // other options
+			});
+			
 
         });
     </script>

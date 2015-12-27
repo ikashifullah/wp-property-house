@@ -122,3 +122,6 @@ h2.property-feature {border: none !important; margin-top: 30px; margin-bottom: 5
 .listing-location {font-size: 12px; margin-top: 10px;}
 .listing-title { padding: 0 1px; font-size: 16px; font-weight: 700; text-decoration: none; margin: 0 0 8px 0}
 .listing-title  a { color: #3b4245 !important; text-decoration: none;}
+.single-image-slider {position: relative;}
+.single-total-images {position: absolute; bottom: 0; background-color: #333; bottom: 0; color: #fff; font-size: 11px; padding: 2px 3px;}
+
