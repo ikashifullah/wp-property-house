@@ -76,25 +76,49 @@ get_header(); ?>
 
 				<h3> Details: </h3>
 				
-				<ul class="single-details-list">
+				<table class="single-details-list">
 				
-						<li><span>Bedrooms:</span><strong><?php echo $ks_property_str->__meta('bedrooms'); ?></strong></li>
+					<tr>
 						
-						<li><span>Status:</span><strong><?php echo $ks_property_str->__cate('property_status', 'No Status', false); ?></strong></li>
+						<td style="width: 60%;"> Bedrooms: </td>
 						
-						<li><span>Size:</span><strong><?php echo $ks_property_str->__meta('area').' '. $ks_property_str->__meta('area_postfix'); ?></strong></li>
+						<td><?php echo $ks_property_str->__meta('bedrooms'); ?></td>
+					
+					</tr>
+					
+					<tr>
 						
-						<li><span>Property Reference:</span><strong><?php echo $ks_property_str->__meta('property_id'); ?></strong></span></li>
+						<td> Status: </td>
 						
-						<li><span>Furnished:</span><strong>Yes:</strong></li>
+						<td><?php echo $ks_property_str->__cate('property_status', 'No Status', false); ?></td>
+					
+					</tr>
+					
+					<tr>
+					
+						<td> Size: </td>
 						
-						<li><span>Rent Is Paid:</span><strong>No:</strong></li>
+						<td><?php echo $ks_property_str->__meta('area').' '. $ks_property_str->__meta('area_postfix'); ?></td>
 						
-						<li><span>Building:</span><strong>Silwar Tower:</strong></li>
+					</tr>
+					
+					<tr>	
 						
-						<li><span>Amenities:</span><strong>:<?php echo $ks_property_str->__cate('property_amenities', 'No Amenities', false); ?></strong></li>
+						<td>Property Reference: </td>
 						
-				</ul>
+						<td><?php echo $ks_property_str->__meta('property_id'); ?></td>
+						
+					</tr>
+					
+					<tr>	
+						
+						<td>Amenities: </td>
+						
+						<td><?php echo $ks_property_str->__cate('property_amenities', 'No Amenities', false); ?></td>
+						
+					</tr>
+				
+				</table>
 				
 				<h3> Description: </h3>
 				

@@ -129,7 +129,6 @@ h2.property-feature {border: none !important; margin-top: 30px; margin-bottom: 5
 .listing-title  a { color: #3b4245 !important; text-decoration: none;}
 .single-image-slider {position: relative;}
 .single-total-images {position: absolute; bottom: 0; background-color: #333; bottom: 0; color: #fff; font-size: 11px; padding: 2px 3px;}
-.single-details-list {list-style:none; padding: 0; line-height: 2; font-size: 15px;}
-.single-details-list span{display: inline-block; width: 215px;}
+.single-details-list { padding: 0; line-height: 2; font-size: 15px;}
 .single-details-text {font-size: 17px;}
 .single-listing-price { font-size: 18px; color: #b80007; float: right;}
