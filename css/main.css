@@ -29,6 +29,11 @@ ul, ol {margin: 0 !important;}
     background-color: #ca0008 !important;
     border-color: #8f0006 !important;
 }
+.blue {
+    background-color: #005f96 !important;
+    border-color: #005484 !important;
+	width: 100%;
+}
 .home-banner-form-btn {
     padding: 0 50px !important;
 	border-color: none !important;
@@ -83,7 +88,7 @@ ul, ol {margin: 0 !important;}
 .banner-from label {font-weight: normal; margin-left: 16px; font-size: 0.875em; margin-bottom: 0;}
 .banner-from .inner-gray-box [class*="col-md"]{ padding-right: 5px; padding-left: 5px;}
 .inner-gray-box {min-height: 100px; background: #e4e4e4;}
-.main-heading {font-size: 25px;}
+.main-heading {font-size: 25px; }
 .main-content h2 {font-size: 19px; margin-bottom: 20px; color: #2d6a70; border-bottom: 1px solid #2d6a70; padding-bottom: 10px;}
 .main-content h2 a {color: #2d6a70;}
 .main-content h2 a:hover {color: #124A4F; text-decoration: none;}
@@ -124,4 +129,7 @@ h2.property-feature {border: none !important; margin-top: 30px; margin-bottom: 5
 .listing-title  a { color: #3b4245 !important; text-decoration: none;}
 .single-image-slider {position: relative;}
 .single-total-images {position: absolute; bottom: 0; background-color: #333; bottom: 0; color: #fff; font-size: 11px; padding: 2px 3px;}
-
+.single-details-list {list-style:none; padding: 0; line-height: 2; font-size: 15px;}
+.single-details-list span{display: inline-block; width: 215px;}
+.single-details-text {font-size: 17px;}
+.single-listing-price { font-size: 18px; color: #b80007; float: right;}

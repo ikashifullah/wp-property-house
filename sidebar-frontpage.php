@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'frontpage-sidebar' ) ) {
 }
 ?>
 
-<div class="right-sidebar col-md-4">
+<div class="right-sidebar col-md-3">
 
 	<div class="col-md-12 col-sm-6">
 

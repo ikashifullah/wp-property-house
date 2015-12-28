@@ -11,65 +11,116 @@ get_header(); ?>
 
 <div class="main-content">
 		
-	<div class="col-md-8 col-sm-12">
+	<div class="col-md-9 col-sm-12">
 	
 		<div class="row">
 		
 		<?php while ( have_posts() ) : the_post(); ?>
 		
-		<?php the_title( '<h1 class="main-heading">', '</h1>' ); ?>
+		<?php
+		
+			$ks_property_str = new get_char( get_post( get_the_ID() ) );
+			
+			$latlng = unserialize(get_post_meta($post->ID, "latlng", true));
+					
+			$detail_images = @unserialize(get_post_meta($post->ID, "detail_images", true)); 
+		
+		?>
+		
+		<?php the_title( '<h1 class="main-heading" style="float: left;">', '</h1>' ); ?>
+			<div class="single-listing-price" style="margin-top: 18px; display: inline-block;"><?php echo $ks_property_str->__meta('price_postfix'); ?> <b style="font-size: 20px;"><?php echo $ks_property_str->__meta('sale_price'); ?></b> /yr</div>
+			
 		
 			<div class="col-md-8 col-sm-12">
 		
 			<?php 
-		
-			$detail_images = @unserialize(get_post_meta($post->ID, "detail_images", true)); 
 			
 			if(!empty($detail_images)): ?>
 			
 				<div class="single-image-slider">
 									
 					<?php 
+					
 						$i = 1;
+						
 						$total_images = count($detail_images);
 												
 						foreach( $detail_images  as $index => $image) {
 							
-							$img_src = wp_get_attachment_image_src($image, 'full');
+							$img_src = wp_get_attachment_image_src($image, 'full'); 
+							
 							if($img_src !="") {
+								
 								$display = '';
+								
 								if($i > 1) {
+									
 										$display = "style='display: none;'";
+										
 								}
-									printf("<a href='%s' ".$display."><img src='%s'></a>", $img_src[0], $img_src[0]);
+								
+								printf("<a href='%s' ".$display."><img src='%s'></a>", $img_src[0], $img_src[0]);
 								
 							}
 							
-							$i++;	
+							$i++;
+							
 						}
 						
 					?>
 					<div class="single-total-images"><?php echo $total_images; ?> Photos - Click to enlarge</div>
+					
 				</div>			
 				
 			<?php endif; ?>
 
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		
+				<h3> Details: </h3>
+				
+				<ul class="single-details-list">
+				
+						<li><span>Bedrooms:</span><strong><?php echo $ks_property_str->__meta('bedrooms'); ?></strong></li>
+						
+						<li><span>Status:</span><strong><?php echo $ks_property_str->__cate('property_status', 'No Status', false); ?></strong></li>
+						
+						<li><span>Size:</span><strong><?php echo $ks_property_str->__meta('area').' '. $ks_property_str->__meta('area_postfix'); ?></strong></li>
+						
+						<li><span>Property Reference:</span><strong><?php echo $ks_property_str->__meta('property_id'); ?></strong></span></li>
+						
+						<li><span>Furnished:</span><strong>Yes:</strong></li>
+						
+						<li><span>Rent Is Paid:</span><strong>No:</strong></li>
+						
+						<li><span>Building:</span><strong>Silwar Tower:</strong></li>
+						
+						<li><span>Amenities:</span><strong>:<?php echo $ks_property_str->__cate('property_amenities', 'No Amenities', false); ?></strong></li>
+						
+				</ul>
+				
+				<h3> Description: </h3>
+				
+				<div class="single-details-text">
+				
+					<?php the_content(); ?>
+					
+				</div>
+				
 			</div>
+			
 			
 		<?php endwhile; // End of the loop. ?>
 		
 			<div class="col-md-4 col-sm-12">
-				Similar Properties
+			
+				<a href="#" class="btn blue big-button"><i class="fa fa-envelope"></i> Send reply</a><p></p>
+				
+				<a href="#" class="btn blue big-button"><i class="fa fa-phone"></i> Show Phone Number</a><p></p>
+				
+				<h4 style="color: #aaabad; margin: 0;">Location</h4>
+				
+				<p style="color: #666;"><?php echo $ks_property_str->__cate('property_city', 'No City', false); ?>, <?php echo $ks_property_str->__cate('locations', 'No Location', false); ?></p>
+				
+				<div class="map_area"></div>
+				
 			</div>
 			
 		</div> <!-- .row -->
@@ -91,5 +142,51 @@ get_header(); ?>
 	</div>
 
 </div><!-- .main-content -->
+
+<?php if( !empty($latlng['lat']) && !empty($latlng['lng'])): ?>
+
+	<script type="text/javascript">
+
+	jQuery(document).ready(function(){
+
+		var option = {
+
+			map:{
+
+				options:{
+
+					center: new google.maps.LatLng(<?php echo $latlng['lat'];?>, <?php echo $latlng['lng'];?>),
+
+					zoom:12,
+
+					mapTypeControl: false,
+
+					navigationControl: true,
+
+					scrollwheel: false,
+
+					streetViewControl: true
+
+				}
+
+			},
+
+			marker:{
+
+				latLng:[<?php echo $latlng['lat'];?>, <?php echo $latlng['lng'];?>],
+
+				draggable:true
+
+			}
+
+		};
+
+
+		jQuery(".map_area").css("height", "220px").gmap3(option);
+	});
+
+	</script>
+	
+<?php endif; ?>	
 
 <?php get_footer(); ?>

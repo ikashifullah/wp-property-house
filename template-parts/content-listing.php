@@ -22,7 +22,7 @@
 			</div>
 			<div class="listing-features">
 				<ul>
-					<li>size : <b>2313 SqFt</b></li>
+					<li>size : <b><?php echo $ks_property_str->__meta('area').' '. $ks_property_str->__meta('area_postfix'); ?></b></li>
 					<li>Status: <b><?php echo $ks_property_str->__cate('property_status', 'No Status', false); ?></b></li>
 					<li>Type: <b><?php echo $ks_property_str->__cate('property_type', 'No Type', false); ?></b></li>
 				</ul>

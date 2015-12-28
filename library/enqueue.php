@@ -19,6 +19,8 @@ function prop_load_scripts() {
 	prop_get_style("owl.carousel.css", "owl-styles");
 	prop_get_style("owl.theme.css", "owl-theme");
 	// Load style for magnific-popup
+	wp_enqueue_script("google_map_API", "http://maps.google.com/maps/api/js?sensor=false&amp;language=en", null, "0.0.1", false);
+	prop_get_script('gmap3.min.js', 'jQuery-gmap3', '5.1.1', false); 
 	
 	
 	$protocol = is_ssl() ? 'https' : 'http';
